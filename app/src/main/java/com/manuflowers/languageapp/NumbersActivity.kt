@@ -15,21 +15,21 @@ class NumbersActivity : AppCompatActivity() {
         setContentView(R.layout.activity_numbers)
 
         //TODO: Implement an array of Strings:
-        val numbers  = mutableListOf(
-            "one",
-            "two",
-            "Three",
-            "four",
-            "Five",
-            "six",
-            "seven",
-            "eight",
-            "nine",
-            "ten"
-            )
+        val numbers = mutableListOf(
+            Word("one", "lutti"),
+            Word("two", "otiiko"),
+            Word("three", "tolookosu"),
+            Word("four", "oyyisa"),
+            Word("five", "massokka"),
+            Word("six", "temmokka"),
+            Word("seven", "kenekaku"),
+            Word("eight", "kawinta"),
+            Word("nine", "wo'e"),
+            Word("ten", "na'aacha")
+        )
 
-        var itemsAdapter: ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, numbers)
-        var listView: ListView = findViewById(R.id.lvNumbersContainer)
+        val itemsAdapter: ArrayAdapter<Word> = ArrayAdapter(this, R.layout.item_of_list, numbers)
+        val listView: ListView = findViewById(R.id.lvNumbersContainer)
         listView.adapter = itemsAdapter
     }
 }
